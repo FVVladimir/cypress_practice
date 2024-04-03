@@ -15,8 +15,7 @@ describe('pass form testing', () => {
       auth:{
         username:"johnsmith",
         password:"12345"
-      },
-      // failOnStatusCode: false
+      }   
      
     });    
     cy.get("button[type = 'submit']").click();
