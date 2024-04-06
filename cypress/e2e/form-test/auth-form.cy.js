@@ -1,4 +1,4 @@
-
+<reference type = "cypress"/>
 
 describe('pass form testing', () => {
   it('right login wrong pass, check error massage', () => {
