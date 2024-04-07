@@ -9,6 +9,7 @@ describe("check the correct link to social chain, and button sign in and sign up
                 password: 'welcome2qauto'
             }
         })
+        // cy.url().should('eq', 'https://qauto.forstudy.space/')
     })
 
     it("check facebook link", () => {
@@ -36,5 +37,19 @@ describe("check the correct link to social chain, and button sign in and sign up
         cy.get('a.socials_link').eq(4).invoke('attr', 'href').should('contain', 'linkedin.com')
 
     })
+    it("check the sign in form open and visible", () => {
 
-})
+        cy.get('.header_signin').click()        
+        cy.get('.modal-content').within(() => {
+        cy.get('.modal-title').should("contain","Log in")
+        
+    })
+    })
+    it("check the sign up form open and visible", () => {
+
+        cy.get('.hero-descriptor_btn').click()        
+        cy.get('.modal-header').within(() => {
+        cy.get('.modal-title').should("contain","Registration")
+        })
+    })
+})   
