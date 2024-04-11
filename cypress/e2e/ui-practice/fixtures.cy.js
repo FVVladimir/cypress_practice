@@ -10,14 +10,16 @@ describe('fixtures test', () => {
                     username: 'guest',
                     password: 'welcome2qauto',
                 },
-            });
+            })
     
             cy.fixture('credentials.json').then((userData) => {
-                cy.contains('Sign In').click();
-                cy.get('h4.modal-title').should('be.visible');
-                cy.get('input#signinEmail').type(userData.name);
-                cy.get('input#signinPassword').type(userData.password);
-                cy.contains('Login').click();   
+                cy.contains('Sign In').click()
+                cy.get('h4.modal-title').should('be.visible')
+                cy.get('input#signinEmail').type(userData.name)
+                cy.get('input#signinPassword').type(userData.password)
+                cy.contains('Login').click()
+                cy.get('h1').should("have.text", "Garage")
+                 
             });
         });
     });
